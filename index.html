@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hand Controlled Particle System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <div id="canvas-container"></div>
+
+    <div id="ui-overlay">
+      <header>
+        <h1>Gesture Particles</h1>
+        <div id="status-indicator" class="status-waiting"> Waiting for Camera...</div>
+      </header>
+
+      <div id="controls-panel">
+        <div class="panel-header">
+          <span class="drag-handle">::</span>
+          <button id="minimize-btn" title="Minimize">−</button>
+        </div>
+        <div class="control-group">
+          <label>Shape</label>
+          <div class="shape-selector">
+            <button class="shape-btn active" data-shape="heart">Heart</button>
+            <button class="shape-btn" data-shape="flower">Flower</button>
+            <button class="shape-btn" data-shape="saturn">Saturn</button>
+            <button class="shape-btn" data-shape="buddha">Meditation</button>
+            <!-- Replaced Buddha with Meditation for generic naming logic, or can try to approximate -->
+            <button class="shape-btn" data-shape="fireworks">Fireworks</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label>Color Base</label>
+          <div class="color-picker-container">
+            <input type="color" id="color-picker" value="#00ffff">
+          </div>
+        </div>
+
+        <div class="control-group usage-hint">
+          <p><strong>Gestures:</strong></p>
+          <ul>
+            <li>Pull Backward: Expand</li>
+            <li>Push Forward: Contract</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="minimized-icon" class="hidden">
+      <span>✨</span>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
