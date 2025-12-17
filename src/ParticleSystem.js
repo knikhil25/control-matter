@@ -149,6 +149,24 @@ export class ParticleSystem {
                     x = x2; y = y2; z = z2;
                 }
             }
+            else if (shapeName === 'sun') {
+                const theta = Math.random() * Math.PI * 2;
+                const phi = Math.acos(2 * Math.random() - 1);
+
+                let r;
+
+                if (i < this.particleCount * 0.9) {
+                    // Main sphere
+                    r = 2.5 + Math.random() * 0.4;
+                } else {
+                    // Solar flare outward particles
+                    r = 3.5 + Math.random() * 1.2;
+                }
+
+                x = r * Math.sin(phi) * Math.cos(theta);
+                y = r * Math.sin(phi) * Math.sin(theta);
+                z = r * Math.cos(phi);
+            }
             else if (shapeName === 'buddha') {
                 // Approximating seated figure with spheres
                 // Head, Body, Legs
